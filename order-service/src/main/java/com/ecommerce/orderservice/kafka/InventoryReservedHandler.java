@@ -56,10 +56,18 @@ public class InventoryReservedHandler {
         if (order.isInventoryReserved()) return;
 
         order.setInventoryReserved(true);
-        orderRepository.save(order);
+//        changed here save to saveAndFlush
+        orderRepository.saveAndFlush(order);
+
+
 
         Order fresh = orderRepository.findById(order.getId()).orElseThrow();
         orderService.evaluateOrder(fresh);
+        log.info(
+                "inventory updated orderId={} inventoryReserved={}",
+                order.getId(),
+                order.isInventoryReserved()
+        );
     }
 
 }

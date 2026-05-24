@@ -54,7 +54,7 @@ public class PaymentEventListener {
 
         order.setPaymentCompleted(true);
         order.setPaymentStatus(event.getStatus());
-        orderRepository.save(order);
+        orderRepository.saveAndFlush(order);
 
         Order fresh = orderRepository.findById(order.getId()).orElseThrow();
 
@@ -69,7 +69,19 @@ public class PaymentEventListener {
             return;
         }
 
-        orderService.evaluateOrder(order);
+//        orderService.evaluateOrder(order);
+//        Order fresh2 =
+//                orderRepository.findById(order.getId())
+//                        .orElseThrow();
+
+        orderService.evaluateOrder(fresh);
+
+        log.info(
+                "payment updated orderId={} paymentCompleted={} paymentStatus={}",
+                order.getId(),
+                order.isPaymentCompleted(),
+                order.getPaymentStatus()
+        );
     }
 
 }

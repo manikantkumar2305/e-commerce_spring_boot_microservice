@@ -110,6 +110,13 @@ public class OrderService {
             );
             orderMetrics.incrementConfirmed();
             log.info("event=OrderConfirmedEvent produced orderId={}",order.getId());
+            log.info(
+                    "orderId={} inventoryReserved={} paymentCompleted={} paymentStatus={}",
+                    order.getId(),
+                    order.isInventoryReserved(),
+                    order.isPaymentCompleted(),
+                    order.getPaymentStatus()
+            );
         }
     }
 }
