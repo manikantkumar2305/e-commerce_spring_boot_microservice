@@ -14,6 +14,7 @@ public class SearchResponse {
 
     private Long id;
     private String name;
+    private String description;
     private BigDecimal price;
     private String category;
 
@@ -21,6 +22,7 @@ public class SearchResponse {
         return new SearchResponse(
                 doc.getId(),
                 doc.getName(),
+                doc.getDescription(),
                 doc.getPrice(),
                 doc.getCategory()
         );

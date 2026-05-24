@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface SearchRepository extends ElasticsearchRepository<Search , Long> {
 
-    List<Search> findByNameContainingIgnoreCase(String keyword);
+//    List<Search> findByNameContainingIgnoreCase(String keyword);
 
 }
