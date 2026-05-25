@@ -1,5 +1,6 @@
 package com.ecommerce.searchservice.service;
 
+import co.elastic.clients.elasticsearch._types.query_dsl.Operator;
 import com.ecommerce.searchservice.document.Search;
 import com.ecommerce.searchservice.repository.SearchRepository;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +33,8 @@ public class SearchService {
                                         "description",
                                         "category"
                                 )
+                                .fuzziness("AUTO")
+//                                .operator(Operator.Or)
                         )
                 ).build();
 
