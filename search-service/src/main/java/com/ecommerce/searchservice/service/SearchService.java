@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SearchService {
 
-    private final SearchRepository searchRepository;
+//    private final SearchRepository searchRepository;
 
     /*public List<Search> search(String keyword){
         return searchRepository.findByNameContainingIgnoreCase(keyword);
