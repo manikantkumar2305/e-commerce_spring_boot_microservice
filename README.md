@@ -13,18 +13,17 @@
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat" />
 </p>
 
-## 📌 Overview
+##  Overview
 
-- A production-grade, event-driven e-commerce backend built with Spring Boot microservices - handling distributed transactions, eventual consistency, and fault tolerance the way real systems do.
-- Designed to model how real-world e-commerce platforms manage high-throughput traffic, fault tolerance, and eventual consistency in a distributed environment.
-
+- A cloud-native e-commerce platform built using Spring Boot microservices, featuring product management, order processing, search, AI-powered recommendations, and centralized configuration.
+- Designed with industry-standard patterns such as service discovery, API gateway, event-driven communication, fault tolerance, and scalable distributed architecture.
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 > This architecture reflects how large-scale distributed systems operate in production.
 
-## ⚙️ Core Architectural Principles
+##  Core Architectural Principles
 
 - **Microservices Architecture** (database-per-service pattern)  
 - **Event-Driven Communication** via Apache Kafka  
@@ -32,28 +31,58 @@
 - **Service Discovery** with Netflix Eureka  
 - **API Gateway** for centralized routing & security  
 - **JWT-based Authentication & Authorization**  
-- **Search Service** powered by Elasticsearch with Redis support  
+- **Search Service** powered by Elasticsearch with Redis support
+- **AI Integration** for intelligent product search and recommendations   
 - **Hybrid Communication** (Async via Kafka + Sync REST where required)
 
 
 ---
-## 🛠 Architecture & Tech Stack
+
+##  AI-Powered Features
+
+The platform includes a dedicated AI Service that enhances product discovery and user experience through intelligent search and recommendations.
+
+### Capabilities
+
+- Semantic Product Search
+- AI-Powered Product Recommendations
+- Retrieval-Augmented Generation (RAG)
+- MCP-Based Tool Integration
+- Natural Language Product Discovery
+
+### AI Stack
+
+- Spring AI
+- Large Language Models (LLMs)
+- Elasticsearch
+- RAG (Retrieval-Augmented Generation)
+- MCP (Model Context Protocol)
+
+---
+
+##  Architecture & Tech Stack
 This project is a distributed, event-driven e-commerce backend system built using:
 
-### 🏗 Architectural Style
+###  Architectural Style
 - Microservices Architecture  
 - Event-Driven Architecture  
 
-### 🚀 Core Technologies
+###  Core Technologies
+
 - Spring Boot  
+- Spring Cloud  
 - Apache Kafka  
 - MySQL  
 - Redis  
 - Elasticsearch  
 - JPA / Hibernate  
 - OpenFeign  
+- JWT Authentication  
+- RAG (Retrieval-Augmented Generation)  
+- MCP (Model Context Protocol)  
+- AI / LLM Integration  
 
-### 🔁 Distributed System Patterns
+###  Distributed System Patterns
 - Saga Pattern (Orchestration)  
 - Outbox Pattern  
 - Inbox Pattern  
@@ -122,7 +151,7 @@ flowchart TB
 
 ---
 
-## 🎯 What This Project Actually Solves
+##  What This Project Actually Solves
 
 This is **not just an order system** — it addresses real-world distributed system challenges:
 
@@ -131,17 +160,19 @@ This is **not just an order system** — it addresses real-world distributed sys
 - ✔ Idempotent processing  
 - ✔ Reliable event publishing  
 - ✔ Duplicate message handling  
-- ✔ Order orchestration  
+- ✔ Order orchestration
+- ✔ AI-powered semantic product search and recommendations  
 - ✔ Data integrity across services  
 - ✔ Eventually consistent architecture
 - ✔ Fault tolerance with Resilience4j (Circuit Breaker, Retry, Rate Limiter)
 
 ---
 
-## 🧩 Services & Responsibilities
+##  Services & Responsibilities
 
-- **API Gateway** → Centralized request routing  
-- **Auth Service** → JWT authentication management  
+- **API Gateway** → Centralized request routing
+- **Auth Service** → JWT authentication management
+- **AI Service** → Semantic search and product recommendations  
 - **Cart Service** → User cart management  
 - **Config Server** → Centralized configuration management  
 - **Inventory Service** → Stock reservation handling  
@@ -149,12 +180,12 @@ This is **not just an order system** — it addresses real-world distributed sys
 - **Payment Service** → Payment transaction processing  
 - **Product Service** → Product catalog management  
 - **Profile Service** → User profile management  
-- **Search Service** → Product search indexing  
+- **Search Service** → Product search indexing and MCP Server
 - **Server Registry** → Service discovery management  
 
 ---
 
-# 🌐 Service Ports
+#  Service Ports
 
 | Service | Port |
 |----------|------|
@@ -168,19 +199,19 @@ This is **not just an order system** — it addresses real-world distributed sys
 | Payment Service | 9006 |
 | Profile Service | 9007 |
 | Search Service | 9008 |
+| AI Service | 7070 |
 | Order Service | 9096 |
 | Kafka | 9092 |
-
 ---
 
-# 🚀 Getting Started
+#  Getting Started
 
 
 Before running the system, make sure you complete the following setup.
 
 ---
 
-# 0️⃣ Config Server Repository Setup (IMPORTANT)
+#  Config Server Repository Setup (IMPORTANT)
 
 This project uses a centralized configuration repository.
 
@@ -188,7 +219,7 @@ The Config Server fetches configuration from this Git repository:
 
 https://github.com/rajni2209/e-commerce_config_server
 
-## 🔹 What You Need To Do
+##  What You Need To Do
 
 1. Fork or clone the repository:
 
@@ -217,7 +248,7 @@ spring:
 ---
 
 
-## 1️⃣ Start Infrastructure (Manual Setup)
+##  Start Infrastructure (Manual Setup)
 
 This project does NOT use Docker.
 
@@ -225,7 +256,7 @@ Make sure the following services are installed and running locally before starti
 
 ---
 
-### 📨 Kafka
+###  Kafka
 
 Start Kafka broker:
 
@@ -240,7 +271,7 @@ localhost:9092
 
 ---
 
-### 🧠 Redis
+###  Redis
 
 Start Redis server:
 
@@ -264,10 +295,27 @@ Default:
 ```
 localhost:6379
 ```
+---
+
+###  Elasticsearch
+
+Start Elasticsearch:
+
+```bash
+elasticsearch
+```
+---
+###  Ollama
+
+Start the Ollama service:
+
+```bash
+ollama serve
+```
 
 ---
 
-### 🗄️ MySQL
+###  MySQL
 The following databases must already exist:
 
 - e_commerce                → Auth Service
@@ -303,7 +351,7 @@ spring:
     password: <your_mysql_password>
     driver-class-name: com.mysql.cj.jdbc.Driver
 ```
-⚠️ Replace:
+ Replace:
 
 - `<your_database_name>` with the appropriate service database
 - `<your_mysql_username>` with your MySQL username
@@ -311,7 +359,7 @@ spring:
 
 ---
 
-## 2️⃣ Start Services (Order Matters)
+## 2️ Start Services (Order Matters)
 
 1. Config Server (8888)
 2. Eureka Server (8761)
@@ -326,7 +374,7 @@ mvn spring-boot:run
 ---
 
 
-# 🔥 Complete System Flow
+#  Complete System Flow
 
 ```mermaid
 flowchart TB
@@ -352,7 +400,7 @@ flowchart TB
 
 ---
 
-# 🔄 Distributed Saga Flow
+#  Distributed Saga Flow
 
 ## Order Service
 
@@ -385,7 +433,7 @@ Topic: order-events
 
 ---
 
-# 💳 Payment Service
+#  Payment Service
 
 Consumes OrderCreatedEvent
 
@@ -397,7 +445,7 @@ Topic: payment-events
 
 ---
 
-# 📦 Inventory Service
+#  Inventory Service
 
 Consumes OrderCreatedEvent
 
@@ -409,7 +457,7 @@ Topic: inventory-reserved-events
 
 ---
 
-# 🧱 Reliability Layer
+#  Reliability Layer
 
 | Feature | Implemented In |
 |----------|----------------|
@@ -424,14 +472,15 @@ Topic: inventory-reserved-events
 
 ---
 
-## 🤖 Upcoming: AI Integration (Spring AI + RAG)
+##  AI Configuration
 
-Currently integrating Spring AI + LLMs + RAG into the Search Service to enable:
-- **Semantic product search** — vector-based search beyond keyword matching
-- **Conversational shopping assistant** — natural language product discovery
-- **Intelligent recommendations** — context-aware suggestions based on user behaviour
+The AI Service is designed to work with both local and cloud-based LLM providers.
 
-Tech: Spring AI · OpenAI / Ollama · Pinecone / pgvector · RAG pipeline
+- By default, the project uses **Ollama** for running AI models locally, enabling private and cost-free development.
+- If Ollama is not available, you can configure any compatible **GPT API key** (such as OpenAI or other supported providers) through the application configuration.
+- The AI layer is provider-agnostic, allowing seamless switching between local and hosted models without changing business logic.
+
+This flexibility makes the project suitable for both local development environments and production deployments.
 
 ## 🙋‍♂️ Author
 - **Rajnikant**  
