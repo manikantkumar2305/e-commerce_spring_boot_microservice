@@ -155,16 +155,16 @@ flowchart TB
 
 This is **not just an order system** — it addresses real-world distributed system challenges:
 
-- ✔ Distributed transaction management  
-- ✔ Event-driven consistency  
-- ✔ Idempotent processing  
-- ✔ Reliable event publishing  
-- ✔ Duplicate message handling  
-- ✔ Order orchestration
-- ✔ AI-powered semantic product search and recommendations  
-- ✔ Data integrity across services  
-- ✔ Eventually consistent architecture
-- ✔ Fault tolerance with Resilience4j (Circuit Breaker, Retry, Rate Limiter)
+-  Distributed transaction management  
+-  Event-driven consistency  
+-  Idempotent processing  
+-  Reliable event publishing  
+-  Duplicate message handling  
+-  Order orchestration
+-  AI-powered semantic product search and recommendations  
+-  Data integrity across services  
+-  Eventually consistent architecture
+-  Fault tolerance with Resilience4j (Circuit Breaker, Retry, Rate Limiter)
 
 ---
 
