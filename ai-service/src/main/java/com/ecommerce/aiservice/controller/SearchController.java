@@ -19,4 +19,9 @@ public class SearchController {
         return searchService.searchResponse(query);
     }
 
+    @GetMapping("/vector")
+    public String embeddingSearch(@RequestParam String query){
+        return searchService.vectorSearch(query);
+    }
+
 }

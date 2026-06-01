@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: ai-service
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+#  ai:
+#    chat:
+#      client:
+#        enabled: true
+#
+#    mcp:
+#      client:
+#        name: search-client
+#        streamable-http:
+#          connections:
+#            search-service:
+#              url: http://127.0.0.1:9099
+#              endpoint: /mcp
+#
+#    ollama:
+#      base-url: http://localhost:11434
+#      chat:
+#        model: llama3.2:3b
+#      init:
+#        timeout: 5m
+#
+#    retry:
+#      max-attempts: 1
+#
+#server:
+#  port: 7070
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#    register-with-eureka: true
+#    fetch-registry: true
+#
+#  instance:
+#    ip-address: 127.0.0.1
