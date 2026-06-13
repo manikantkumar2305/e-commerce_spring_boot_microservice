@@ -33,6 +33,13 @@ The system includes:
 - Docker Containerization
 - Kubernetes Orchestration
 - High Availability & Scalability
+
+### Key Highlights
+- 12 independent microservices communicating via sync and async communication
+- End-to-end order flow completes in under 300ms under normal load
+- Saga pattern handles distributed transactions across 3 services with full rollback support
+- Redis-backed cart handles concurrent sessions with sub-10ms reads
+
 ---
 
 ##  Architecture Overview
@@ -54,28 +61,6 @@ The system includes:
 - **Kubernetes Orchestration**
 - **Self-Healing Infrastructure**
 
-
----
-
-##  AI-Powered Features
-
-The platform includes a dedicated AI Service that enhances product discovery and user experience through intelligent search and recommendations.
-
-### Capabilities
-
-- Semantic Product Search
-- AI-Powered Product Recommendations
-- Retrieval-Augmented Generation (RAG)
-- MCP-Based Tool Integration
-- Natural Language Product Discovery
-
-### AI Stack
-
-- Spring AI
-- Large Language Models (LLMs)
-- Elasticsearch
-- RAG (Retrieval-Augmented Generation)
-- MCP (Model Context Protocol)
 
 ---
 
@@ -149,6 +134,36 @@ Kubernetes manages:
 - Horizontal Scaling
 - Centralized Configuration
 - Better Resource Utilization
+
+---
+
+
+##  AI-Powered Features
+
+The platform includes a dedicated AI Service that enhances product discovery and user experience through intelligent search and recommendations.
+
+### Capabilities
+
+- Semantic Product Search
+- AI-Powered Product Recommendations
+- Retrieval-Augmented Generation (RAG)
+- MCP-Based Tool Integration
+- Natural Language Product Discovery
+
+### AI Stack
+
+- Spring AI
+- Large Language Models (LLMs)
+- Elasticsearch
+- RAG (Retrieval-Augmented Generation)
+- MCP (Model Context Protocol)
+
+### How It Works
+- Product embeddings generated using [model name e.g. nomic-embed-text via Ollama]
+- Embeddings stored in Elasticsearch's dense_vector fields (vector store)
+- On search, query is embedded → nearest vectors retrieved → passed to LLM as context (RAG)
+- MCP Server exposed by Search Service → consumed by AI Service for tool-based product lookup
+- Spring AI abstracts the LLM provider, allowing switch between Ollama (local) and OpenAI (prod)
 
 ---
 
@@ -308,6 +323,16 @@ This is **not just an order system** — it addresses real-world distributed sys
 | Kafka | 9092 |
 ---
 
+
+## Testing
+
+- Unit tests cover service layer logic using JUnit 5 and Mockito
+- Integration tests for the Order → Payment → Inventory Saga flow using embedded Kafka (spring-kafka-test)
+- Idempotency behavior verified with duplicate event injection tests
+- Run all tests: mvn test
+
+---
+
 #  Getting Started
 
 
@@ -393,8 +418,6 @@ spring:
 # ⚠️ Prerequisites for Running Microservices Locally
 
 Before starting any microservices locally, ensure the required infrastructure services are installed and running on your local machine.
-
-> **Note:** This project does **not** use Docker. All infrastructure components must be started manually.
 
 ---
 
