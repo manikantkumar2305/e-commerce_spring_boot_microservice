@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Microservices System
+# 🛒 E-Commerce Backend Application
 
 <p align="center">
   <b>Scalable • Event-Driven • Distributed • Production-Grade</b>
@@ -11,12 +11,28 @@
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white" />
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" />
 </p>
 
-##  Overview
+## Overview
 
-- A cloud-native e-commerce platform built using Spring Boot microservices, featuring product management, order processing, search, AI-powered recommendations, and centralized configuration.
-- Designed with industry-standard patterns such as service discovery, API gateway, event-driven communication, fault tolerance, and scalable distributed architecture.
+A cloud-native e-commerce platform built using Spring Boot microservices, Apache Kafka, AI-powered services, Docker, and Kubernetes.
+
+The platform demonstrates how modern distributed systems are designed, containerized, deployed, and orchestrated in production environments.
+
+The system includes:
+
+- Microservices Architecture
+- Event-Driven Communication
+- Distributed Transactions (Saga Pattern)
+- AI-Powered Product Search & Recommendations
+- Service Discovery
+- API Gateway
+- Centralized Configuration
+- Docker Containerization
+- Kubernetes Orchestration
+- High Availability & Scalability
 ---
 
 ##  Architecture Overview
@@ -34,6 +50,9 @@
 - **Search Service** powered by Elasticsearch with Redis support
 - **AI Integration** for intelligent product search and recommendations   
 - **Hybrid Communication** (Async via Kafka + Sync REST where required)
+- **Docker Containerization**
+- **Kubernetes Orchestration**
+- **Self-Healing Infrastructure**
 
 
 ---
@@ -86,7 +105,52 @@ This project is a distributed, event-driven e-commerce backend system built usin
 - Saga Pattern (Orchestration)  
 - Outbox Pattern  
 - Inbox Pattern  
-- Idempotent Processing  
+- Idempotent Processing
+
+### Containerization & Orchestration
+
+- Docker
+- Kubernetes
+- Deployments
+- Services
+- ConfigMaps
+- Secrets
+- Namespace Management
+
+---
+
+## Kubernetes Deployment Architecture
+
+All microservices are containerized using Docker and deployed to Kubernetes.
+
+Kubernetes manages:
+
+- Pod Lifecycle
+- Service Discovery
+- Internal Networking
+- Load Balancing
+- Configuration Management
+- Secret Management
+- Scaling
+- Self-Healing
+
+### Kubernetes Resources Used
+
+- Namespace
+- Deployment
+- Service
+- ConfigMap
+- Secret
+
+### Benefits
+
+- Automatic Restart of Failed Pods
+- Zero-Downtime Deployments
+- Horizontal Scaling
+- Centralized Configuration
+- Better Resource Utilization
+
+---
 
 
 ```mermaid
@@ -147,9 +211,49 @@ flowchart TB
     CFG -.->|config| Services
     EUR -.->|discovery| Services
 ```
-  
 
 ---
+
+```mermaid
+flowchart TB
+
+    Client --> GatewaySvc
+
+    subgraph Kubernetes Cluster
+
+        GatewaySvc["Gateway Service"]
+
+        Auth["Auth Pod"]
+        Product["Product Pod"]
+        Order["Order Pod"]
+        Inventory["Inventory Pod"]
+        Payment["Payment Pod"]
+        Search["Search Pod"]
+        AI["AI Pod"]
+
+        Kafka["Kafka"]
+        Redis["Redis"]
+        ConfigMap["ConfigMap"]
+        Secret["Secret"]
+
+        GatewaySvc --> Auth
+        GatewaySvc --> Product
+        GatewaySvc --> Order
+        GatewaySvc --> Search
+        GatewaySvc --> AI
+
+        Auth --> ConfigMap
+        Product --> ConfigMap
+        Order --> Secret
+
+        Order --> Kafka
+        Kafka --> Payment
+        Kafka --> Inventory
+    end
+```
+
+---
+
 
 ##  What This Project Actually Solves
 
@@ -209,8 +313,6 @@ This is **not just an order system** — it addresses real-world distributed sys
 
 Before running the system, make sure you complete the following setup.
 
----
-
 #  Config Server Repository Setup (IMPORTANT)
 
 This project uses a centralized configuration repository.
@@ -242,77 +344,6 @@ spring:
         git:
           uri: https://github.com/your-username/your-config-repo
 ```
-
-⚠️ Make sure this is configured before starting microservices.
-
----
-
-
-##  Start Infrastructure (Manual Setup)
-
-This project does NOT use Docker.
-
-Make sure the following services are installed and running locally before starting the microservices.
-
----
-
-###  Kafka
-
-Start Kafka broker:
-
-```bash
-kafka-server-start.sh config/server.properties
-```
-
-Default:
-```
-localhost:9092
-```
-
----
-
-###  Redis
-
-Start Redis server:
-
-```bash
-redis-server
-```
-
-Verify Redis is running:
-
-```bash
-redis-cli ping
-```
-
-Expected response:
-
-```
-PONG
-```
-
-Default:
-```
-localhost:6379
-```
----
-
-###  Elasticsearch
-
-Start Elasticsearch:
-
-```bash
-elasticsearch
-```
----
-###  Ollama
-
-Start the Ollama service:
-
-```bash
-ollama serve
-```
-
 ---
 
 ###  MySQL
@@ -359,7 +390,146 @@ spring:
 
 ---
 
-## 2️ Start Services (Order Matters)
+# ⚠️ Prerequisites for Running Microservices Locally
+
+Before starting any microservices locally, ensure the required infrastructure services are installed and running on your local machine.
+
+> **Note:** This project does **not** use Docker. All infrastructure components must be started manually.
+
+---
+
+## Start Infrastructure Services
+
+### Kafka
+
+Start the Kafka broker:
+
+```bash
+kafka-server-start.sh config/server.properties
+```
+
+**Default broker address:**
+
+```text
+localhost:9092
+```
+
+---
+
+### Redis
+
+Start the Redis server:
+
+```bash
+redis-server
+```
+
+Verify that Redis is running:
+
+```bash
+redis-cli ping
+```
+
+Expected output:
+
+```text
+PONG
+```
+
+**Default Redis address:**
+
+```text
+localhost:6379
+```
+
+---
+
+### Elasticsearch
+
+Start Elasticsearch:
+
+```bash
+elasticsearch
+```
+
+Verify that Elasticsearch is running:
+
+```bash
+curl http://localhost:9200
+```
+
+Expected response:
+
+```json
+{
+  "name": "...",
+  "cluster_name": "...",
+  "cluster_uuid": "...",
+  "version": { ... },
+  "tagline": "You Know, for Search"
+}
+```
+
+**Default Elasticsearch address:**
+
+```text
+localhost:9200
+```
+
+---
+
+### Ollama
+
+Start the Ollama service:
+
+```bash
+ollama serve
+```
+
+Verify that Ollama is running:
+
+```bash
+curl http://localhost:11434/api/tags
+```
+
+**Default Ollama address:**
+
+```text
+localhost:11434
+```
+
+---
+
+## Verification Checklist
+
+Before launching any microservice, confirm that:
+
+* [ ] Kafka is running on `localhost:9092`
+* [ ] Redis is running on `localhost:6379`
+* [ ] `redis-cli ping` returns `PONG`
+* [ ] Elasticsearch is running on `localhost:9200`
+* [ ] Ollama is running on `localhost:11434`
+
+Once these services are available, you can start the microservices locally.
+
+
+---
+
+# For Kubernetes Deployment
+
+This project is fully containerized using Docker and deployed on Kubernetes.
+
+All microservices run as independent containers and are managed through Kubernetes Deployments and Services.
+
+Apply all Kubernetes manifests:
+
+```bash
+kubectl apply -f k8s/
+```
+
+---
+
+## Start Services (Order Matters)
 
 1. Config Server (8888)
 2. Eureka Server (8761)
