@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: search-service
+  namespace: ecommerce
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: search-service
+
+  template:
+    metadata:
+      labels:
+        app: search-service
+
+    spec:
+      containers:
+        - name: search-service
+          image: rajni2209/search-service:v1
+
+          ports:
+            - containerPort: 9099
+
+          env:
+            - name: DB_HOST
+              value: mariadb
+
+            - name: DB_PORT
+              value: "3306"
+
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+
+            - secretRef:
+                name: ecommerce-secret
