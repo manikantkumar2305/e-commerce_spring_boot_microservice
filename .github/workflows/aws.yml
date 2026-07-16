@@ -5,23 +5,34 @@ on:
     branches:
       - main
 
+
+permissions:
+  id-token: write
+  contents: read
+
 env:
   AWS_REGION: eu-north-1
   ECR_REPOSITORY: e-commerce
 
 jobs:
   build-and-push:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         service:
+          - ai-service
+          - api-gatway
+          - auth-service
+          - cart-service
           - config-server
-          - api-gateway
-          - user-service
-          - product-service
+          - inventory-service
           - order-service
           - payment-service
+          - product-service
+          - profile-service
+          - search-service
+          - server-registry
 
     steps:
       - name: Checkout Repository
@@ -31,7 +42,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::<ACCOUNT_ID>:role/<GITHUB_ACTION_ROLE>
+          role-to-assume: arn:aws:iam::889993502667:role/github-actions-role-e-commerce
 
       - name: Login to Amazon ECR
         id: login-ecr
