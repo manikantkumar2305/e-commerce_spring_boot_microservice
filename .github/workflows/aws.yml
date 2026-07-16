@@ -7,7 +7,6 @@ on:
 
 
 permissions:
-  id-token: write
   contents: read
 
 env:
@@ -46,8 +45,10 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::889993502667:role/github-actions-role-e-commerce
+
 
       - name: Login to Amazon ECR
         id: login-ecr
