@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ .Values.configMap.name }}
+
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS e_commerce;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_profile;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_productservice;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_orderservice;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_inventoryservice;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_paymentservice;

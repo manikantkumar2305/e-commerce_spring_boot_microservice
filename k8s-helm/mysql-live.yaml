@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: ecommerce
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2026-07-19T14:18:25Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/version: 1.16.0
+    helm.sh/chart: mysql-0.1.0
+  name: ecommerce-mysql
+  namespace: default
+  resourceVersion: "905387"
+  uid: ed199c32-0571-404d-b18d-a7ccd84dd312
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: ecommerce
+      app.kubernetes.io/name: mysql
+  serviceName: ecommerce-mysql
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/name: mysql
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: DB_PASSWORD
+              name: ecommerce-secret
+        image: mysql:8.4
+        imagePullPolicy: IfNotPresent
+        name: mysql
+        ports:
+        - containerPort: 3306
+          name: mysql
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: mysql-storage
+        - mountPath: /docker-entrypoint-initdb.d
+          name: mysql-init-script
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: mysql-init-script
+        name: mysql-init-script
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: mysql-storage
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 5Gi
+      volumeMode: Filesystem
+    status:
+      phase: Pending
+status:
+  availableReplicas: 1
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: ecommerce-mysql-755fd9c957
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updateRevision: ecommerce-mysql-755fd9c957
+  updatedReplicas: 1

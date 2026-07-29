@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: ecommerce
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2026-07-19T18:09:57Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/version: 1.16.0
+    helm.sh/chart: redis-0.1.0
+  name: ecommerce-redis
+  namespace: default
+  resourceVersion: "995977"
+  uid: 4d7ddd0e-c8cd-4ef1-a4fd-17998696b347
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: ecommerce
+      app.kubernetes.io/name: redis
+  serviceName: ecommerce-redis
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/name: redis
+    spec:
+      containers:
+      - image: redis:7.2
+        imagePullPolicy: IfNotPresent
+        name: redis
+        ports:
+        - containerPort: 6379
+          name: redis
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /data
+          name: redis-storage
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: redis-storage
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 2Gi
+      volumeMode: Filesystem
+    status:
+      phase: Pending
+status:
+  availableReplicas: 1
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: ecommerce-redis-798565d7d9
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updateRevision: ecommerce-redis-798565d7d9
+  updatedReplicas: 1

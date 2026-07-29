@@ -1,0 +1,1962 @@
+---
+# Source: ecommerce/charts/ai-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-ai-service
+  labels:
+    helm.sh/chart: ai-service-0.1.0
+    app.kubernetes.io/name: ai-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/api-gateway/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-api-gateway
+  labels:
+    helm.sh/chart: api-gateway-0.1.0
+    app.kubernetes.io/name: api-gateway
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/auth-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-auth-service
+  labels:
+    helm.sh/chart: auth-service-0.1.0
+    app.kubernetes.io/name: auth-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/cart-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-cart-service
+  labels:
+    helm.sh/chart: cart-service-0.1.0
+    app.kubernetes.io/name: cart-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/config-server/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-config-server
+  labels:
+    helm.sh/chart: config-server-0.1.0
+    app.kubernetes.io/name: config-server
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/elasticsearch/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-elasticsearch
+  labels:
+    helm.sh/chart: elasticsearch-0.1.0
+    app.kubernetes.io/name: elasticsearch
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/inventory-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-inventory-service
+  labels:
+    helm.sh/chart: inventory-service-0.1.0
+    app.kubernetes.io/name: inventory-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/kafka/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-kafka
+  labels:
+    helm.sh/chart: kafka-0.1.0
+    app.kubernetes.io/name: kafka
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/mariadb/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-mariadb
+  labels:
+    helm.sh/chart: mariadb-0.1.0
+    app.kubernetes.io/name: mariadb
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/mysql/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-mysql
+  labels:
+    helm.sh/chart: mysql-0.1.0
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/ollama/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-ollama
+  labels:
+    helm.sh/chart: ollama-0.1.0
+    app.kubernetes.io/name: ollama
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/order-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-order-service
+  labels:
+    helm.sh/chart: order-service-0.1.0
+    app.kubernetes.io/name: order-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/payment-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-payment-service
+  labels:
+    helm.sh/chart: payment-service-0.1.0
+    app.kubernetes.io/name: payment-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/product-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-product-service
+  labels:
+    helm.sh/chart: product-service-0.1.0
+    app.kubernetes.io/name: product-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/profile-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-profile-service
+  labels:
+    helm.sh/chart: profile-service-0.1.0
+    app.kubernetes.io/name: profile-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/redis/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-redis
+  labels:
+    helm.sh/chart: redis-0.1.0
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/search-service/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-search-service
+  labels:
+    helm.sh/chart: search-service-0.1.0
+    app.kubernetes.io/name: search-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/charts/server-registry/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecommerce-server-registry
+  labels:
+    helm.sh/chart: server-registry-0.1.0
+    app.kubernetes.io/name: server-registry
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: ecommerce/templates/secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ecommerce-secret
+type: Opaque
+
+stringData:
+  DB_USERNAME: root
+  DB_PASSWORD: rajni
+  JWT_SECRET: my-super-secret-key-my-super-secret-key
+---
+# Source: ecommerce/charts/mariadb/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: mariadb-init-script
+
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS search_db;
+
+    CREATE DATABASE IF NOT EXISTS ai_service;
+---
+# Source: ecommerce/charts/mysql/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: mysql-init-script
+
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS e_commerce;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_profile;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_productservice;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_orderservice;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_inventoryservice;
+
+    CREATE DATABASE IF NOT EXISTS e_commerce_paymentservice;
+---
+# Source: ecommerce/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecommerce-config
+data:
+  EUREKA_URL: "http://ecommerce-server-registry:8761/eureka"
+  CONFIG_SERVER_URL: "http://ecommerce-config-server:8888"
+
+  DB_HOST: ecommerce-mysql
+  DB_PORT: "3306"
+
+  KAFKA_BOOTSTRAP_SERVERS: "ecommerce-kafka:9092"
+
+  REDIS_HOST: "ecommerce-redis"
+  REDIS_PORT: "6379"
+
+  ELASTICSEARCH_URL: "http://ecommerce-elasticsearch:9200"
+
+  SEARCH_SERVICE_URL: "http://ecommerce-search-service:9099"
+
+  OLLAMA_BASE_URL: "http://ecommerce-ollama:11434"
+---
+# Source: ecommerce/charts/ai-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-ai-service
+  labels:
+    helm.sh/chart: ai-service-0.1.0
+    app.kubernetes.io/name: ai-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 7070
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: ai-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/api-gateway/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-api-gateway
+  labels:
+    helm.sh/chart: api-gateway-0.1.0
+    app.kubernetes.io/name: api-gateway
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: api-gateway
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/auth-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-auth-service
+  labels:
+    helm.sh/chart: auth-service-0.1.0
+    app.kubernetes.io/name: auth-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9090
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: auth-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/cart-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-cart-service
+  labels:
+    helm.sh/chart: cart-service-0.1.0
+    app.kubernetes.io/name: cart-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9094
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: cart-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/config-server/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-config-server
+  labels:
+    helm.sh/chart: config-server-0.1.0
+    app.kubernetes.io/name: config-server
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8888
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: config-server
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/elasticsearch/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-elasticsearch
+  labels:
+    helm.sh/chart: elasticsearch-0.1.0
+    app.kubernetes.io/name: elasticsearch
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  clusterIP: None
+  type: ClusterIP
+  ports:
+    - port: 9200
+      targetPort: 9200
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: elasticsearch
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/inventory-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-inventory-service
+  labels:
+    helm.sh/chart: inventory-service-0.1.0
+    app.kubernetes.io/name: inventory-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9095
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: inventory-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/kafka/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-kafka
+  labels:
+    helm.sh/chart: kafka-0.1.0
+    app.kubernetes.io/name: kafka
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  clusterIP: None
+  type: ClusterIP
+  ports:
+    - port: 9092
+      targetPort: 9092
+      protocol: TCP
+      name: kafka
+  selector:
+    app.kubernetes.io/name: kafka
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/mariadb/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-mariadb
+  labels:
+    helm.sh/chart: mariadb-0.1.0
+    app.kubernetes.io/name: mariadb
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  clusterIP: None
+  type: ClusterIP
+  ports:
+    - port: 3306
+      targetPort: 3306
+      protocol: TCP
+      name: mariadb
+  selector:
+    app.kubernetes.io/name: mariadb
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/mysql/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-mysql
+  labels:
+    helm.sh/chart: mysql-0.1.0
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  clusterIP: None
+  type: ClusterIP
+  ports:
+    - port: 3306
+      targetPort: 3306
+      protocol: TCP
+      name: mysql
+  selector:
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/ollama/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-ollama
+  labels:
+    helm.sh/chart: ollama-0.1.0
+    app.kubernetes.io/name: ollama
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 11434
+      targetPort: 11434
+      protocol: TCP
+      name: ollama
+  selector:
+    app.kubernetes.io/name: ollama
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/order-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-order-service
+  labels:
+    helm.sh/chart: order-service-0.1.0
+    app.kubernetes.io/name: order-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9096
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: order-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/payment-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-payment-service
+  labels:
+    helm.sh/chart: payment-service-0.1.0
+    app.kubernetes.io/name: payment-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9098
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: payment-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/product-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-product-service
+  labels:
+    helm.sh/chart: product-service-0.1.0
+    app.kubernetes.io/name: product-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9097
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: product-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/profile-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-profile-service
+  labels:
+    helm.sh/chart: profile-service-0.1.0
+    app.kubernetes.io/name: profile-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9091
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: profile-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/redis/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-redis
+  labels:
+    helm.sh/chart: redis-0.1.0
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  clusterIP: None
+  type: ClusterIP
+  ports:
+    - port: 6379
+      targetPort: 6379
+      protocol: TCP
+      name: redis
+  selector:
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/search-service/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-search-service
+  labels:
+    helm.sh/chart: search-service-0.1.0
+    app.kubernetes.io/name: search-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9099
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: search-service
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/server-registry/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-server-registry
+  labels:
+    helm.sh/chart: server-registry-0.1.0
+    app.kubernetes.io/name: server-registry
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8761
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: server-registry
+    app.kubernetes.io/instance: ecommerce
+---
+# Source: ecommerce/charts/ai-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-ai-service
+  labels:
+    helm.sh/chart: ai-service-0.1.0
+    app.kubernetes.io/name: ai-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ai-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: ai-service-0.1.0
+        app.kubernetes.io/name: ai-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-ai-service
+      containers:
+        - name: ai-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:ai-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+
+          ports:
+            - name: http
+              containerPort: 7070
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/api-gateway/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-api-gateway
+  labels:
+    helm.sh/chart: api-gateway-0.1.0
+    app.kubernetes.io/name: api-gateway
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: api-gateway
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: api-gateway-0.1.0
+        app.kubernetes.io/name: api-gateway
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-api-gateway
+      containers:
+        - name: api-gateway
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:api-gatway-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/auth-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-auth-service
+  labels:
+    helm.sh/chart: auth-service-0.1.0
+    app.kubernetes.io/name: auth-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: auth-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: auth-service-0.1.0
+        app.kubernetes.io/name: auth-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-auth-service
+      containers:
+        - name: auth-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:auth-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+
+          ports:
+            - name: http
+              containerPort: 9090
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/cart-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-cart-service
+  labels:
+    helm.sh/chart: cart-service-0.1.0
+    app.kubernetes.io/name: cart-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cart-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: cart-service-0.1.0
+        app.kubernetes.io/name: cart-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-cart-service
+      containers:
+        - name: cart-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:cart-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+          ports:
+            - name: http
+              containerPort: 9094
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/config-server/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-config-server
+  labels:
+    helm.sh/chart: config-server-0.1.0
+    app.kubernetes.io/name: config-server
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: config-server
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: config-server-0.1.0
+        app.kubernetes.io/name: config-server
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-config-server
+      containers:
+        - name: config-server
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:config-server-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+          ports:
+            - name: http
+              containerPort: 8888
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+---
+# Source: ecommerce/charts/inventory-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-inventory-service
+  labels:
+    helm.sh/chart: inventory-service-0.1.0
+    app.kubernetes.io/name: inventory-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: inventory-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: inventory-service-0.1.0
+        app.kubernetes.io/name: inventory-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-inventory-service
+      containers:
+        - name: inventory-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:inventory-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+          ports:
+            - name: http
+              containerPort: 9095
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/ollama/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-ollama
+  labels:
+    helm.sh/chart: ollama-0.1.0
+    app.kubernetes.io/name: ollama
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ollama
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: ollama-0.1.0
+        app.kubernetes.io/name: ollama
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-ollama
+      containers:
+        - name: ollama
+          image: "ollama/ollama:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 11434
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/order-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-order-service
+  labels:
+    helm.sh/chart: order-service-0.1.0
+    app.kubernetes.io/name: order-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: order-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: order-service-0.1.0
+        app.kubernetes.io/name: order-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-order-service
+      containers:
+        - name: order-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:order-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+          ports:
+            - name: http
+              containerPort: 9096
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/payment-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-payment-service
+  labels:
+    helm.sh/chart: payment-service-0.1.0
+    app.kubernetes.io/name: payment-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: payment-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: payment-service-0.1.0
+        app.kubernetes.io/name: payment-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-payment-service
+      containers:
+        - name: payment-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:payment-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+          ports:
+            - name: http
+              containerPort: 9098
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/product-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-product-service
+  labels:
+    helm.sh/chart: product-service-0.1.0
+    app.kubernetes.io/name: product-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: product-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: product-service-0.1.0
+        app.kubernetes.io/name: product-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-product-service
+      containers:
+        - name: product-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:product-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+          ports:
+            - name: http
+              containerPort: 9097
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/profile-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-profile-service
+  labels:
+    helm.sh/chart: profile-service-0.1.0
+    app.kubernetes.io/name: profile-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: profile-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: profile-service-0.1.0
+        app.kubernetes.io/name: profile-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-profile-service
+      containers:
+        - name: profile-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:profile-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+          ports:
+            - name: http
+              containerPort: 9091
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/search-service/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-search-service
+  labels:
+    helm.sh/chart: search-service-0.1.0
+    app.kubernetes.io/name: search-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: search-service
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: search-service-0.1.0
+        app.kubernetes.io/name: search-service
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-search-service
+      containers:
+        - name: search-service
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:search-service-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ecommerce-config
+            - secretRef:
+                name: ecommerce-secret
+          ports:
+            - name: http
+              containerPort: 9099
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/server-registry/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-server-registry
+  labels:
+    helm.sh/chart: server-registry-0.1.0
+    app.kubernetes.io/name: server-registry
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: server-registry
+      app.kubernetes.io/instance: ecommerce
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: server-registry-0.1.0
+        app.kubernetes.io/name: server-registry
+        app.kubernetes.io/instance: ecommerce
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: ecommerce-server-registry
+      containers:
+        - name: server-registry
+          image: "889993502667.dkr.ecr.ap-southeast-2.amazonaws.com/e-commerce:server-registry-13eb7c82849900a315408e9960068749185493d2"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8761
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+---
+# Source: ecommerce/charts/elasticsearch/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: ecommerce-elasticsearch
+  labels:
+    helm.sh/chart: elasticsearch-0.1.0
+    app.kubernetes.io/name: elasticsearch
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+
+spec:
+  serviceName: ecommerce-elasticsearch
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: elasticsearch
+      app.kubernetes.io/instance: ecommerce
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: elasticsearch
+        app.kubernetes.io/instance: ecommerce
+
+    spec:
+      containers:
+        - name: elasticsearch
+          image: "docker.elastic.co/elasticsearch/elasticsearch:8.17.0"
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: http
+              containerPort: 9200
+              protocol: TCP
+
+          env:
+            - name: discovery.type
+              value: single-node
+
+            - name: xpack.security.enabled
+              value: "false"
+
+            - name: ES_JAVA_OPTS
+              value: "-Xms512m -Xmx512m"
+
+          resources:
+            {}
+
+          volumeMounts:
+            - name: elasticsearch-storage
+              mountPath: /usr/share/elasticsearch/data
+
+  volumeClaimTemplates:
+  - metadata:
+      name: elasticsearch-storage
+
+    spec:
+      accessModes:
+        - ReadWriteOnce
+
+      storageClassName: gp2
+
+      resources:
+        requests:
+          storage: 10Gi
+---
+# Source: ecommerce/charts/kafka/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: ecommerce-kafka
+  labels:
+    helm.sh/chart: kafka-0.1.0
+    app.kubernetes.io/name: kafka
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+
+spec:
+  serviceName: ecommerce-kafka
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: kafka
+      app.kubernetes.io/instance: ecommerce
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: kafka
+        app.kubernetes.io/instance: ecommerce
+
+    spec:
+      containers:
+        - name: kafka
+          image: "apache/kafka:latest"
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: kafka
+              containerPort: 9092
+              protocol: TCP
+
+          env:
+            - name: KAFKA_NODE_ID
+              value: "1"
+
+            - name: KAFKA_PROCESS_ROLES
+              value: "broker,controller"
+
+            - name: KAFKA_CONTROLLER_LISTENER_NAMES
+              value: "CONTROLLER"
+
+            - name: KAFKA_LISTENERS
+              value: "PLAINTEXT://:9092,CONTROLLER://:9093"
+
+            - name: KAFKA_ADVERTISED_LISTENERS
+              value: "PLAINTEXT://ecommerce-kafka:9092"
+
+            - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
+              value: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT"
+
+            - name: KAFKA_CONTROLLER_QUORUM_VOTERS
+              value: "1@localhost:9093"
+
+            - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
+              value: "1"
+
+            - name: KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR
+              value: "1"
+
+            - name: KAFKA_TRANSACTION_STATE_LOG_MIN_ISR
+              value: "1"
+
+          resources:
+            {}
+
+          volumeMounts:
+            - name: kafka-storage
+              mountPath: /var/lib/kafka/data
+
+  volumeClaimTemplates:
+    - metadata:
+        name: kafka-storage
+
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: gp2
+
+        resources:
+          requests:
+            storage: 10Gi
+---
+# Source: ecommerce/charts/mariadb/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: ecommerce-mariadb
+  labels:
+    helm.sh/chart: mariadb-0.1.0
+    app.kubernetes.io/name: mariadb
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+
+spec:
+  serviceName: ecommerce-mariadb
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mariadb
+      app.kubernetes.io/instance: ecommerce
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mariadb
+        app.kubernetes.io/instance: ecommerce
+
+    spec:
+      containers:
+        - name: mariadb
+          image: "mariadb:11"
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: mariadb
+              containerPort: 3306
+              protocol: TCP
+
+          env:
+            - name: MARIADB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secret
+                  key: DB_PASSWORD
+
+          resources:
+            {}
+
+          volumeMounts:
+            - name: mariadb-storage
+              mountPath: /var/lib/mysql
+
+            - name: mariadb-init-script
+              mountPath: /docker-entrypoint-initdb.d
+
+      volumes:
+        - name: mariadb-init-script
+          configMap:
+            name: mariadb-init-script
+
+  volumeClaimTemplates:
+  - metadata:
+      name: mariadb-storage
+
+    spec:
+      accessModes:
+        - ReadWriteOnce
+
+      storageClassName: gp2
+
+      resources:
+        requests:
+          storage: 5Gi
+---
+# Source: ecommerce/charts/mysql/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: ecommerce-mysql
+  labels:
+    helm.sh/chart: mysql-0.1.0
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+
+spec:
+  serviceName: ecommerce-mysql
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mysql
+      app.kubernetes.io/instance: ecommerce
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mysql
+        app.kubernetes.io/instance: ecommerce
+
+    spec:
+      containers:
+        - name: mysql
+          image: "mysql:8.4"
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: mysql
+              containerPort: 3306
+              protocol: TCP
+
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secret
+                  key: DB_PASSWORD
+
+          resources:
+            {}
+
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+
+            - name: mysql-init-script
+              mountPath: /docker-entrypoint-initdb.d
+
+      volumes:
+        - name: mysql-init-script
+          configMap:
+            name: mysql-init-script
+
+  volumeClaimTemplates:
+    - metadata:
+        name: mysql-storage
+
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: gp2
+
+        resources:
+          requests:
+            storage: 5Gi
+---
+# Source: ecommerce/charts/redis/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: ecommerce-redis
+  labels:
+    helm.sh/chart: redis-0.1.0
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+
+spec:
+  serviceName: ecommerce-redis
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: redis
+      app.kubernetes.io/instance: ecommerce
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: redis
+        app.kubernetes.io/instance: ecommerce
+
+    spec:
+      containers:
+        - name: redis
+          image: "redis:7.2"
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: redis
+              containerPort: 6379
+              protocol: TCP
+
+          resources:
+            {}
+
+          volumeMounts:
+            - name: redis-storage
+              mountPath: /data
+
+  volumeClaimTemplates:
+  - metadata:
+      name: redis-storage
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: gp2
+      resources:
+        requests:
+          storage: 2Gi
+---
+# Source: ecommerce/charts/ai-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-ai-service-test-connection"
+  labels:
+    helm.sh/chart: ai-service-0.1.0
+    app.kubernetes.io/name: ai-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-ai-service:7070']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/api-gateway/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-api-gateway-test-connection"
+  labels:
+    helm.sh/chart: api-gateway-0.1.0
+    app.kubernetes.io/name: api-gateway
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-api-gateway:8080']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/auth-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-auth-service-test-connection"
+  labels:
+    helm.sh/chart: auth-service-0.1.0
+    app.kubernetes.io/name: auth-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-auth-service:9090']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/cart-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-cart-service-test-connection"
+  labels:
+    helm.sh/chart: cart-service-0.1.0
+    app.kubernetes.io/name: cart-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-cart-service:9094']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/config-server/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-config-server-test-connection"
+  labels:
+    helm.sh/chart: config-server-0.1.0
+    app.kubernetes.io/name: config-server
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-config-server:8888']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/inventory-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-inventory-service-test-connection"
+  labels:
+    helm.sh/chart: inventory-service-0.1.0
+    app.kubernetes.io/name: inventory-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-inventory-service:9095']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/order-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-order-service-test-connection"
+  labels:
+    helm.sh/chart: order-service-0.1.0
+    app.kubernetes.io/name: order-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-order-service:9096']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/payment-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-payment-service-test-connection"
+  labels:
+    helm.sh/chart: payment-service-0.1.0
+    app.kubernetes.io/name: payment-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-payment-service:9098']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/product-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-product-service-test-connection"
+  labels:
+    helm.sh/chart: product-service-0.1.0
+    app.kubernetes.io/name: product-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-product-service:9097']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/profile-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-profile-service-test-connection"
+  labels:
+    helm.sh/chart: profile-service-0.1.0
+    app.kubernetes.io/name: profile-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-profile-service:9091']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/search-service/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-search-service-test-connection"
+  labels:
+    helm.sh/chart: search-service-0.1.0
+    app.kubernetes.io/name: search-service
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-search-service:9099']
+  restartPolicy: Never
+---
+# Source: ecommerce/charts/server-registry/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ecommerce-server-registry-test-connection"
+  labels:
+    helm.sh/chart: server-registry-0.1.0
+    app.kubernetes.io/name: server-registry
+    app.kubernetes.io/instance: ecommerce
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ecommerce-server-registry:8761']
+  restartPolicy: Never

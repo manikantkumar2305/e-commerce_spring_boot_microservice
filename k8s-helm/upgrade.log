@@ -1,0 +1,94 @@
+upgrade.go:164: 2026-07-19 17:36:05.117633256 +0000 UTC m=+0.588763372 [debug] preparing upgrade for ecommerce
+upgrade.go:172: 2026-07-19 17:36:05.457607075 +0000 UTC m=+0.928737188 [debug] performing update for ecommerce
+upgrade.go:375: 2026-07-19 17:36:05.828410332 +0000 UTC m=+1.299540445 [debug] creating upgraded release for ecommerce
+client.go:388: 2026-07-19 17:36:05.861648514 +0000 UTC m=+1.332778620 [debug] checking 58 resources for changes
+client.go:725: 2026-07-19 17:36:05.874875649 +0000 UTC m=+1.346005755 [debug] Looks like there are no changes for ServiceAccount "ecommerce-ai-service"
+client.go:725: 2026-07-19 17:36:05.893799167 +0000 UTC m=+1.364929280 [debug] Looks like there are no changes for ServiceAccount "ecommerce-api-gateway"
+client.go:725: 2026-07-19 17:36:05.911222898 +0000 UTC m=+1.382353006 [debug] Looks like there are no changes for ServiceAccount "ecommerce-auth-service"
+client.go:725: 2026-07-19 17:36:05.93846475 +0000 UTC m=+1.409594859 [debug] Looks like there are no changes for ServiceAccount "ecommerce-cart-service"
+client.go:725: 2026-07-19 17:36:05.952960587 +0000 UTC m=+1.424090703 [debug] Looks like there are no changes for ServiceAccount "ecommerce-config-server"
+client.go:725: 2026-07-19 17:36:05.968981622 +0000 UTC m=+1.440111748 [debug] Looks like there are no changes for ServiceAccount "ecommerce-elasticsearch"
+client.go:725: 2026-07-19 17:36:05.994048603 +0000 UTC m=+1.465178728 [debug] Looks like there are no changes for ServiceAccount "ecommerce-inventory-service"
+client.go:725: 2026-07-19 17:36:06.014610282 +0000 UTC m=+1.485740410 [debug] Looks like there are no changes for ServiceAccount "ecommerce-kafka"
+client.go:725: 2026-07-19 17:36:06.032460941 +0000 UTC m=+1.503591059 [debug] Looks like there are no changes for ServiceAccount "ecommerce-mariadb"
+client.go:725: 2026-07-19 17:36:06.074057656 +0000 UTC m=+1.545187783 [debug] Looks like there are no changes for ServiceAccount "ecommerce-mysql"
+client.go:725: 2026-07-19 17:36:06.095769665 +0000 UTC m=+1.566899803 [debug] Looks like there are no changes for ServiceAccount "ecommerce-ollama"
+client.go:725: 2026-07-19 17:36:06.111639379 +0000 UTC m=+1.582769522 [debug] Looks like there are no changes for ServiceAccount "ecommerce-order-service"
+client.go:725: 2026-07-19 17:36:06.127920113 +0000 UTC m=+1.599050223 [debug] Looks like there are no changes for ServiceAccount "ecommerce-payment-service"
+client.go:725: 2026-07-19 17:36:06.146089205 +0000 UTC m=+1.617219320 [debug] Looks like there are no changes for ServiceAccount "ecommerce-product-service"
+client.go:725: 2026-07-19 17:36:06.162675918 +0000 UTC m=+1.633806034 [debug] Looks like there are no changes for ServiceAccount "ecommerce-profile-service"
+client.go:725: 2026-07-19 17:36:06.179238121 +0000 UTC m=+1.650368256 [debug] Looks like there are no changes for ServiceAccount "ecommerce-redis"
+client.go:725: 2026-07-19 17:36:06.195975485 +0000 UTC m=+1.667105621 [debug] Looks like there are no changes for ServiceAccount "ecommerce-search-service"
+client.go:725: 2026-07-19 17:36:06.214430822 +0000 UTC m=+1.685560929 [debug] Looks like there are no changes for ServiceAccount "ecommerce-server-registry"
+client.go:734: 2026-07-19 17:36:06.231281656 +0000 UTC m=+1.702411788 [debug] Patch Secret "ecommerce-secret" in namespace default
+client.go:725: 2026-07-19 17:36:06.250287549 +0000 UTC m=+1.721417665 [debug] Looks like there are no changes for ConfigMap "mariadb-init-script"
+client.go:725: 2026-07-19 17:36:06.274442857 +0000 UTC m=+1.745572971 [debug] Looks like there are no changes for ConfigMap "mysql-init-script"
+client.go:725: 2026-07-19 17:36:06.295343217 +0000 UTC m=+1.766473331 [debug] Looks like there are no changes for ConfigMap "ecommerce-config"
+client.go:725: 2026-07-19 17:36:06.313606678 +0000 UTC m=+1.784736791 [debug] Looks like there are no changes for Service "ecommerce-ai-service"
+client.go:725: 2026-07-19 17:36:06.331549024 +0000 UTC m=+1.802679158 [debug] Looks like there are no changes for Service "ecommerce-api-gateway"
+client.go:725: 2026-07-19 17:36:06.349119867 +0000 UTC m=+1.820249995 [debug] Looks like there are no changes for Service "ecommerce-auth-service"
+client.go:725: 2026-07-19 17:36:06.366580774 +0000 UTC m=+1.837710887 [debug] Looks like there are no changes for Service "ecommerce-cart-service"
+client.go:725: 2026-07-19 17:36:06.386871298 +0000 UTC m=+1.858001407 [debug] Looks like there are no changes for Service "ecommerce-config-server"
+client.go:725: 2026-07-19 17:36:06.404869468 +0000 UTC m=+1.875999577 [debug] Looks like there are no changes for Service "ecommerce-elasticsearch"
+client.go:725: 2026-07-19 17:36:06.422794761 +0000 UTC m=+1.893924874 [debug] Looks like there are no changes for Service "ecommerce-inventory-service"
+client.go:725: 2026-07-19 17:36:06.439139222 +0000 UTC m=+1.910269335 [debug] Looks like there are no changes for Service "ecommerce-kafka"
+client.go:725: 2026-07-19 17:36:06.45611198 +0000 UTC m=+1.927242089 [debug] Looks like there are no changes for Service "ecommerce-mariadb"
+client.go:725: 2026-07-19 17:36:06.471991699 +0000 UTC m=+1.943121818 [debug] Looks like there are no changes for Service "ecommerce-mysql"
+client.go:725: 2026-07-19 17:36:06.489864325 +0000 UTC m=+1.960994442 [debug] Looks like there are no changes for Service "ecommerce-ollama"
+client.go:725: 2026-07-19 17:36:06.507203469 +0000 UTC m=+1.978333596 [debug] Looks like there are no changes for Service "ecommerce-order-service"
+client.go:725: 2026-07-19 17:36:06.524116628 +0000 UTC m=+1.995246762 [debug] Looks like there are no changes for Service "ecommerce-payment-service"
+client.go:725: 2026-07-19 17:36:06.541956847 +0000 UTC m=+2.013086972 [debug] Looks like there are no changes for Service "ecommerce-product-service"
+client.go:725: 2026-07-19 17:36:06.558487251 +0000 UTC m=+2.029617364 [debug] Looks like there are no changes for Service "ecommerce-profile-service"
+client.go:725: 2026-07-19 17:36:06.575442421 +0000 UTC m=+2.046572548 [debug] Looks like there are no changes for Service "ecommerce-redis"
+client.go:725: 2026-07-19 17:36:06.592421842 +0000 UTC m=+2.063551957 [debug] Looks like there are no changes for Service "ecommerce-search-service"
+client.go:725: 2026-07-19 17:36:06.611141866 +0000 UTC m=+2.082271982 [debug] Looks like there are no changes for Service "ecommerce-server-registry"
+client.go:725: 2026-07-19 17:36:06.629266901 +0000 UTC m=+2.100397015 [debug] Looks like there are no changes for Deployment "ecommerce-ai-service"
+client.go:725: 2026-07-19 17:36:06.649999219 +0000 UTC m=+2.121129331 [debug] Looks like there are no changes for Deployment "ecommerce-api-gateway"
+client.go:725: 2026-07-19 17:36:06.670065305 +0000 UTC m=+2.141195418 [debug] Looks like there are no changes for Deployment "ecommerce-auth-service"
+client.go:725: 2026-07-19 17:36:06.687492501 +0000 UTC m=+2.158622611 [debug] Looks like there are no changes for Deployment "ecommerce-cart-service"
+client.go:409: 2026-07-19 17:36:06.70719545 +0000 UTC m=+2.178325557 [debug] Created a new Deployment called "ecommerce-config-server" in default
+
+client.go:725: 2026-07-19 17:36:06.733762215 +0000 UTC m=+2.204892326 [debug] Looks like there are no changes for Deployment "ecommerce-inventory-service"
+client.go:725: 2026-07-19 17:36:06.767163893 +0000 UTC m=+2.238294005 [debug] Looks like there are no changes for Deployment "ecommerce-ollama"
+client.go:725: 2026-07-19 17:36:06.799055212 +0000 UTC m=+2.270185325 [debug] Looks like there are no changes for Deployment "ecommerce-order-service"
+client.go:725: 2026-07-19 17:36:06.819138595 +0000 UTC m=+2.290268704 [debug] Looks like there are no changes for Deployment "ecommerce-payment-service"
+client.go:725: 2026-07-19 17:36:06.844512983 +0000 UTC m=+2.315643095 [debug] Looks like there are no changes for Deployment "ecommerce-product-service"
+client.go:725: 2026-07-19 17:36:06.869166019 +0000 UTC m=+2.340296135 [debug] Looks like there are no changes for Deployment "ecommerce-profile-service"
+client.go:725: 2026-07-19 17:36:06.885426655 +0000 UTC m=+2.356556767 [debug] Looks like there are no changes for Deployment "ecommerce-search-service"
+client.go:725: 2026-07-19 17:36:06.908179557 +0000 UTC m=+2.379309663 [debug] Looks like there are no changes for Deployment "ecommerce-server-registry"
+client.go:409: 2026-07-19 17:36:06.930091645 +0000 UTC m=+2.401221760 [debug] Created a new StatefulSet called "ecommerce-elasticsearch" in default
+
+client.go:409: 2026-07-19 17:36:06.944736708 +0000 UTC m=+2.415866817 [debug] Created a new StatefulSet called "ecommerce-kafka" in default
+
+client.go:734: 2026-07-19 17:36:06.964813046 +0000 UTC m=+2.435943161 [debug] Patch StatefulSet "ecommerce-mariadb" in namespace default
+client.go:409: 2026-07-19 17:36:07.007478079 +0000 UTC m=+2.478608211 [debug] Created a new StatefulSet called "ecommerce-mysql" in default
+
+client.go:734: 2026-07-19 17:36:07.024514815 +0000 UTC m=+2.495644937 [debug] Patch StatefulSet "ecommerce-redis" in namespace default
+client.go:420: 2026-07-19 17:36:07.036101079 +0000 UTC m=+2.507231192 [debug] error updating the resource "ecommerce-redis":
+	 cannot patch "ecommerce-redis" with kind StatefulSet: StatefulSet.apps "ecommerce-redis" is invalid: spec: Forbidden: updates to statefulset spec for fields other than 'replicas', 'ordinals', 'template', 'updateStrategy', 'revisionHistoryLimit', 'persistentVolumeClaimRetentionPolicy' and 'minReadySeconds' are forbidden
+upgrade.go:487: 2026-07-19 17:36:07.049659519 +0000 UTC m=+2.520789645 [debug] warning: Upgrade "ecommerce" failed: cannot patch "ecommerce-redis" with kind StatefulSet: StatefulSet.apps "ecommerce-redis" is invalid: spec: Forbidden: updates to statefulset spec for fields other than 'replicas', 'ordinals', 'template', 'updateStrategy', 'revisionHistoryLimit', 'persistentVolumeClaimRetentionPolicy' and 'minReadySeconds' are forbidden
+Error: UPGRADE FAILED: cannot patch "ecommerce-redis" with kind StatefulSet: StatefulSet.apps "ecommerce-redis" is invalid: spec: Forbidden: updates to statefulset spec for fields other than 'replicas', 'ordinals', 'template', 'updateStrategy', 'revisionHistoryLimit', 'persistentVolumeClaimRetentionPolicy' and 'minReadySeconds' are forbidden
+helm.go:92: 2026-07-19 17:36:07.074052708 +0000 UTC m=+2.545182831 [debug] cannot patch "ecommerce-redis" with kind StatefulSet: StatefulSet.apps "ecommerce-redis" is invalid: spec: Forbidden: updates to statefulset spec for fields other than 'replicas', 'ordinals', 'template', 'updateStrategy', 'revisionHistoryLimit', 'persistentVolumeClaimRetentionPolicy' and 'minReadySeconds' are forbidden
+helm.sh/helm/v3/pkg/kube.(*Client).update
+	helm.sh/helm/v3/pkg/kube/client.go:433
+helm.sh/helm/v3/pkg/kube.(*Client).Update
+	helm.sh/helm/v3/pkg/kube/client.go:482
+helm.sh/helm/v3/pkg/action.(*Upgrade).releasingUpgrade
+	helm.sh/helm/v3/pkg/action/upgrade.go:429
+runtime.goexit
+	runtime/asm_amd64.s:1771
+UPGRADE FAILED
+main.newUpgradeCmd.func2
+	helm.sh/helm/v3/cmd/helm/upgrade.go:244
+github.com/spf13/cobra.(*Command).execute
+	github.com/spf13/cobra@v1.10.2/command.go:1015
+github.com/spf13/cobra.(*Command).ExecuteC
+	github.com/spf13/cobra@v1.10.2/command.go:1148
+github.com/spf13/cobra.(*Command).Execute
+	github.com/spf13/cobra@v1.10.2/command.go:1071
+main.main
+	helm.sh/helm/v3/cmd/helm/helm.go:91
+runtime.main
+	runtime/proc.go:290
+runtime.goexit
+	runtime/asm_amd64.s:1771

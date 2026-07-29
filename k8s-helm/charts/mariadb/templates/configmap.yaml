@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ .Values.configMap.name }}
+
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS search_db;
+
+    CREATE DATABASE IF NOT EXISTS ai_service;

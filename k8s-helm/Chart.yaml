@@ -1,0 +1,97 @@
+apiVersion: v2
+name: ecommerce
+description: A Helm chart for Kubernetes
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
+#
+# Library charts provide useful utilities or functions for the chart developer. They're included as
+# a dependency of application charts to inject those utilities and functions into the rendering
+# pipeline. Library charts do not define any templates and therefore cannot be deployed.
+type: application
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 0.1.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+# It is recommended to use it with quotes.
+appVersion: "1.16.0"
+
+dependencies:
+  - name: ai-service
+    version: 0.1.0
+    repository: "file://charts/ai-service"
+
+  - name: api-gateway
+    version: 0.1.0
+    repository: "file://charts/api-gateway"
+
+  - name: auth-service
+    version: 0.1.0
+    repository: "file://charts/auth-service"
+
+  - name: cart-service
+    version: 0.1.0
+    repository: "file://charts/cart-service"
+
+  - name: config-server
+    version: 0.1.0
+    repository: "file://charts/config-server"
+
+  - name: inventory-service
+    version: 0.1.0
+    repository: "file://charts/inventory-service"
+
+  - name: order-service
+    version: 0.1.0
+    repository: "file://charts/order-service"
+
+  - name: payment-service
+    version: 0.1.0
+    repository: "file://charts/payment-service"
+
+  - name: product-service
+    version: 0.1.0
+    repository: "file://charts/product-service"
+
+  - name: profile-service
+    version: 0.1.0
+    repository: "file://charts/profile-service"
+
+  - name: search-service
+    version: 0.1.0
+    repository: "file://charts/search-service"
+
+  - name: server-registry
+    version: 0.1.0
+    repository: "file://charts/server-registry"
+
+  - name: mysql
+    version: 0.1.0
+    repository: "file://charts/mysql"
+
+  - name: redis
+    version: 0.1.0
+    repository: "file://charts/redis"
+
+  - name: kafka
+    version: 0.1.0
+    repository: "file://charts/kafka"
+
+  - name: elasticsearch
+    version: 0.1.0
+    repository: "file://charts/elasticsearch"
+
+  - name: ollama
+    version: 0.1.0
+    repository: "file://charts/ollama"
+
+  - name: mariadb
+    version: 0.1.0
+    repository: "file://charts/mariadb"

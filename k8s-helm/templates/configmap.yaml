@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecommerce-config
+data:
+  EUREKA_URL: "http://ecommerce-server-registry:8761/eureka"
+  CONFIG_SERVER_URL: "http://ecommerce-config-server:8888"
+
+  DB_HOST: ecommerce-mysql
+  DB_PORT: "3306"
+
+  KAFKA_BOOTSTRAP_SERVERS: "ecommerce-kafka:9092"
+
+  REDIS_HOST: "ecommerce-redis"
+  REDIS_PORT: "6379"
+
+  ELASTICSEARCH_URL: "http://ecommerce-elasticsearch:9200"
+
+  SEARCH_SERVICE_URL: "http://ecommerce-search-service:9099"
+
+  OLLAMA_BASE_URL: "http://ecommerce-ollama:11434"
