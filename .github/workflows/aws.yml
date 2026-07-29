@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: ap-southeast-2
+  AWS_REGION: ap-south-1
   ECR_REPOSITORY: e-commerce
 
 jobs:
