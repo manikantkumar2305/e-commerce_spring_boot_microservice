@@ -1,7 +1,4 @@
 dependencies:
-- name: ai-service
-  repository: file://charts/ai-service
-  version: 0.1.0
 - name: api-gateway
   repository: file://charts/api-gateway
   version: 0.1.0
@@ -47,11 +44,8 @@ dependencies:
 - name: elasticsearch
   repository: file://charts/elasticsearch
   version: 0.1.0
-- name: ollama
-  repository: file://charts/ollama
-  version: 0.1.0
 - name: mariadb
   repository: file://charts/mariadb
   version: 0.1.0
-digest: sha256:c41860aab838ccc48b8a09869b24747419dc03ed9aaa82f27a388b34d2277c35
-generated: "2026-07-18T19:41:39.177138908Z"
+digest: sha256:7ed2a7f6512c0a404609e61483d1384263d07899d2318fa9e2846d63b421ae9f
+generated: "2026-07-29T23:54:48.3197425+05:30"

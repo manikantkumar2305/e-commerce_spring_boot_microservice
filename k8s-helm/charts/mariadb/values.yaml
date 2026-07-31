@@ -163,8 +163,8 @@ affinity: {}
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
-  storageClass: standard
-  size: 5Gi 
+  storageClass: gp3
+  size: 20Gi
 
 secret:
   name: ecommerce-secret
@@ -172,4 +172,10 @@ secret:
 configMap:
   name: mariadb-init-script
 
-resources: {}
+resources:
+  requests:
+    cpu: 500m
+    memory: 1Gi
+  limits:
+    cpu: "1"
+    memory: 2Gi

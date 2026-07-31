@@ -1,0 +1,138 @@
+name: Deploy to Amazon EKS
+
+on:
+  workflow_run:
+    workflows:
+      - Build & Push Docker Images using GitHub Actions
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: ap-south-1
+      CLUSTER_NAME: e-commerce          # Change if your cluster name is different
+      RELEASE_NAME: ecommerce
+      HELM_PATH: ./k8s-helm
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v4
+        with:
+          version: latest
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: latest
+
+      - name: Configure kubeconfig
+        run: |
+          aws eks update-kubeconfig \
+            --region $AWS_REGION \
+            --name $CLUSTER_NAME
+
+      - name: Verify Cluster
+        run: |
+          kubectl get nodes
+          kubectl get ns
+
+      - name: Helm Dependency Update
+        run: |
+          helm dependency update $HELM_PATH
+
+      - name: Helm Lint
+        run: |
+          helm lint $HELM_PATH
+
+      - name: Deploy Application
+        shell: bash
+        run: |
+
+          SHA=${{ github.event.workflow_run.head_sha }}
+
+          SERVICES=(
+            api-gateway
+            auth-service
+            cart-service
+            config-server
+            inventory-service
+            order-service
+            payment-service
+            product-service
+            profile-service
+            search-service
+            server-registry
+          )
+
+          HELM_ARGS=""
+
+          for SERVICE in "${SERVICES[@]}"
+          do
+            HELM_ARGS="$HELM_ARGS --set ${SERVICE}.image.tag=${SERVICE}-${SHA}"
+          done
+
+          echo "Deploying commit: $SHA"
+
+          helm upgrade \
+            --install $RELEASE_NAME \
+            $HELM_PATH \
+            $HELM_ARGS \
+            --wait \
+            --timeout 10m
+
+      - name: Wait For Rollout
+        shell: bash
+        run: |
+
+          SERVICES=(
+            config-server
+            server-registry
+            auth-service
+            cart-service
+            inventory-service
+            order-service
+            payment-service
+            product-service
+            profile-service
+            search-service
+            api-gateway
+          )
+
+          for SERVICE in "${SERVICES[@]}"
+          do
+            echo "========================================"
+            echo "Waiting for $SERVICE"
+
+            kubectl rollout status deployment/$SERVICE \
+              --timeout=300s
+          done
+
+      - name: Verify Deployment
+        run: |
+          kubectl get deployments
+          kubectl get pods -o wide
+          kubectl get svc
+
+      - name: Rollback if Failed
+        if: failure()
+        run: |
+          echo "Deployment failed..."
+          helm rollback $RELEASE_NAME

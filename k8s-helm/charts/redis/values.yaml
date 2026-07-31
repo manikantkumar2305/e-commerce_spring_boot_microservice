@@ -163,7 +163,13 @@ affinity: {}
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
-  storageClass: standard
-  size: 2Gi
+  storageClass: gp3
+  size: 5Gi
 
-resources: {}
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
