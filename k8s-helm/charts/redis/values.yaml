@@ -163,7 +163,7 @@ affinity: {}
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
-  storageClass: gp3
+  storageClass: gp3-csi
   size: 5Gi
 
 resources:

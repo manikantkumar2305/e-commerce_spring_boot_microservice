@@ -38,10 +38,14 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
 
-podSecurityContext: {}
+podSecurityContext: 
+  fsGroup: 1000
   # fsGroup: 2000
 
-securityContext: {}
+securityContext: 
+  runAsUser: 1000
+  runAsGroup: 1000
+
   # capabilities:
   #   drop:
   #   - ALL
@@ -164,13 +168,13 @@ affinity: {}
 persistence:
   enabled: true
   accessMode: ReadWriteOnce
-  storageClass: gp3
+  storageClass: gp3-csi
   size: 20Gi
 
 resources:
   requests:
+    cpu: "500m"
+    memory: 1Gi
+  limits:
     cpu: "1"
     memory: 2Gi
-  limits:
-    cpu: "2"
-    memory: 4Gi
