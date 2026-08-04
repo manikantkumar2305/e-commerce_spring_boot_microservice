@@ -1,13 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
+
 metadata:
   name: ecommerce-ingress
+
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
     alb.ingress.kubernetes.io/healthcheck-path: /actuator/health
-    alb.ingress.kubernetes.io/success-codes: "200"
 
 spec:
   ingressClassName: alb
@@ -15,6 +16,10 @@ spec:
   rules:
   - http:
       paths:
+
+      # ----------------------------
+      # API Gateway
+      # ----------------------------
       - path: /
         pathType: Prefix
         backend:
@@ -22,3 +27,25 @@ spec:
             name: ecommerce-api-gateway
             port:
               number: 8080
+
+      # ----------------------------
+      # Config Server
+      # ----------------------------
+      - path: /config
+        pathType: Prefix
+        backend:
+          service:
+            name: ecommerce-config-server
+            port:
+              number: 8888
+
+      # ----------------------------
+      # Eureka
+      # ----------------------------
+      - path: /eureka
+        pathType: Prefix
+        backend:
+          service:
+            name: ecommerce-server-registry
+            port:
+              number: 8761
