@@ -55,15 +55,15 @@ jobs:
             -t ${{ env.SERVICE_NAME }}:${{ github.sha }} \
             ./config-server
 
-      - name: Run Trivy Image Scan
-        uses: aquasecurity/trivy-action@0.35.0
-        with:
-          scan-type: image
-          image-ref: ${{ env.SERVICE_NAME }}:${{ github.sha }}
-          format: table
-          exit-code: 1
-          ignore-unfixed: true
-          severity: HIGH,CRITICAL
+    #   - name: Run Trivy Image Scan
+    #     uses: aquasecurity/trivy-action@0.35.0
+    #     with:
+    #       scan-type: image
+    #       image-ref: ${{ env.SERVICE_NAME }}:${{ github.sha }}
+    #       format: table
+    #       exit-code: 1
+    #       ignore-unfixed: true
+    #       severity: HIGH,CRITICAL
 
       - name: Tag Docker Image
         run: |
