@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/rajni2209/e-commerce_config_server
+          uri: https://github.com/manikantkumar2305/e-commerce_config_server
           clone-on-start: true
 
 server:
