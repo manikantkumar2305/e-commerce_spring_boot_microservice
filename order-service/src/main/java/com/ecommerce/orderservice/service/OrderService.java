@@ -1,6 +1,5 @@
-package com.ecommerce.orderservice.service;
-
-import com.ecommerce.orderservice.DTO.CartResponse;;
+package com.ecommerce.orderservice.service;;
+import com.ecommerce.orderservice.DTO.CartResponse;
 import com.ecommerce.orderservice.DTO.OrderResponse;
 import com.ecommerce.orderservice.client.CartClient;
 import com.ecommerce.orderservice.entity.Order;
