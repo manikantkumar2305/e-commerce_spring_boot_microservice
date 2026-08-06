@@ -13,35 +13,17 @@ permissions:
 jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     env:
       AWS_REGION: ap-south-1
-      CLUSTER_NAME: e-commerce          # Change if your cluster name is different
+      CLUSTER_NAME: e-commerce-prod
       RELEASE_NAME: ecommerce
       HELM_PATH: ./k8s-helm
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
-
-      - name: Install kubectl
-        uses: azure/setup-kubectl@v4
-        with:
-          version: latest
-
-      - name: Install Helm
-        uses: azure/setup-helm@v4
-        with:
-          version: latest
 
       - name: Configure kubeconfig
         run: |
@@ -49,12 +31,13 @@ jobs:
             --region $AWS_REGION \
             --name $CLUSTER_NAME
 
-      - name: Verify Cluster
+      - name: Verify Cluster Connection
         run: |
+          kubectl cluster-info
           kubectl get nodes
           kubectl get ns
 
-      - name: Helm Dependency Update
+      - name: Update Helm Dependencies
         run: |
           helm dependency update $HELM_PATH
 
@@ -98,7 +81,7 @@ jobs:
             --wait \
             --timeout 10m
 
-      - name: Wait For Rollout
+      - name: Wait for Rollout
         shell: bash
         run: |
 
@@ -118,21 +101,29 @@ jobs:
 
           for SERVICE in "${SERVICES[@]}"
           do
-            echo "========================================"
-            echo "Waiting for $SERVICE"
+            echo "======================================"
+            echo "Waiting for ecommerce-$SERVICE"
 
-            kubectl rollout status deployment/$SERVICE \
+            kubectl rollout status deployment/ecommerce-$SERVICE \
               --timeout=300s
           done
 
       - name: Verify Deployment
         run: |
+          echo "========== Nodes =========="
+          kubectl get nodes
+
+          echo "========== Deployments =========="
           kubectl get deployments
+
+          echo "========== Pods =========="
           kubectl get pods -o wide
+
+          echo "========== Services =========="
           kubectl get svc
 
-      - name: Rollback if Failed
-        if: failure()
-        run: |
-          echo "Deployment failed..."
-          helm rollback $RELEASE_NAME
+          echo "========== Ingress =========="
+          kubectl get ingress
+
+          echo "========== Helm Release =========="
+          helm list
