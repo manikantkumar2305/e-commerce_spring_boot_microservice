@@ -31,7 +31,7 @@
 - [🖥️ Self-Hosted GitHub Actions Runner](#️-self-hosted-github-actions-runner)
 - [☸️ Amazon EKS](#️-amazon-eks)
 - [⎈ Helm Deployment](#-helm-deployment)
-- [🌐 Kubernetes Ingress](#-kubernetes-ingress)
+- [🌐 Application Load Balancer](#-Application-Load-Balancer)
 - [📊 Monitoring with Prometheus & Grafana](#-monitoring-with-prometheus--grafana)
 - [💾 Persistent Storage](#-persistent-storage)
 - [🎯 DevOps Work Implemented](#-devops-work-implemented)
@@ -56,7 +56,7 @@ The DevOps implementation includes:
 - Amazon EKS deployment
 - Helm umbrella chart
 - Kubernetes workload management
-- Kubernetes Ingress
+- Application Load Balancer
 - Prometheus monitoring
 - Grafana dashboards
 - Persistent storage using AWS EBS gp3
@@ -107,7 +107,7 @@ Amazon ECR
 
 **Services Built and Published:**
 
-- API Gateway (`api-gateway`)
+- API Gateway (`api-gatway`)
 - Auth Service
 - Cart Service
 - Config Server
@@ -318,15 +318,15 @@ The umbrella chart manages the application and infrastructure charts together.
 
 ---
 
-## 🌐 Kubernetes Ingress
+## 🌐 Application Load Balancer
 
-Kubernetes Ingress is used as the entry point for external application traffic.
+Application Load Balancer is used as the entry point for external application traffic.
 
 ```text
 Internet
    │
    ▼
-Ingress
+LoadBalancer
    │
    ▼
 API Gateway
@@ -335,7 +335,7 @@ API Gateway
 Microservices
 ```
 
-Ingress resources are configured to route external traffic to the appropriate Kubernetes services.
+The Application Load Balancer routes external traffic directly to the API Gateway service.
 
 ---
 
@@ -420,6 +420,7 @@ EBS CSI Driver
 - Integrated Amazon ECR.
 - Configured AWS EBS gp3 persistent storage.
 - Integrated the AWS EBS CSI Driver.
+- Configured Application Load Balancer.
 
 ### Kubernetes
 - Created Kubernetes deployments and services.
@@ -428,7 +429,6 @@ EBS CSI Driver
 - Created an umbrella Helm chart named `ecommerce`.
 - Deployed the complete stack to Amazon EKS.
 - Configured persistent storage for stateful workloads.
-- Configured Kubernetes Ingress.
 - Added Kubernetes rollout and deployment verification.
 
 ### Monitoring
