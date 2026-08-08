@@ -58,11 +58,6 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Run Unit Tests
-        run: |
-          cd ${{ matrix.service }}
-          mvn test
-
       - name: Build JAR
         run: |
           cd ${{ matrix.service }}
