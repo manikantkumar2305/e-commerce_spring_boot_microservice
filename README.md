@@ -31,7 +31,7 @@
 - [🖥️ Self-Hosted GitHub Actions Runner](#️-self-hosted-github-actions-runner)
 - [☸️ Amazon EKS](#️-amazon-eks)
 - [⎈ Helm Deployment](#-helm-deployment)
-- [🌐 Application Load Balancer](#-Application-Load-Balancer)
+- [🌐 Kubernetes LoadBalancer](#-Kubernetes-LoadBalancer)
 - [📊 Monitoring with Prometheus & Grafana](#-monitoring-with-prometheus--grafana)
 - [💾 Persistent Storage](#-persistent-storage)
 - [🎯 DevOps Work Implemented](#-devops-work-implemented)
@@ -56,7 +56,7 @@ The DevOps implementation includes:
 - Amazon EKS deployment
 - Helm umbrella chart
 - Kubernetes workload management
-- Application Load Balancer
+- Kubernetes LoadBalancer
 - Prometheus monitoring
 - Grafana dashboards
 - Persistent storage using AWS EBS gp3
@@ -318,15 +318,15 @@ The umbrella chart manages the application and infrastructure charts together.
 
 ---
 
-## 🌐 Application Load Balancer
+## 🌐 Kubernetes LoadBalancer
 
-Application Load Balancer is used as the entry point for external application traffic.
+The ELB routes external traffic directly to the API Gateway service.
 
 ```text
 Internet
    │
    ▼
-LoadBalancer
+Elastic Load Balancer (ELB)
    │
    ▼
 API Gateway
@@ -335,7 +335,7 @@ API Gateway
 Microservices
 ```
 
-The Application Load Balancer routes external traffic directly to the API Gateway service.
+A Kubernetes Service of type LoadBalancer is used as the entry point for external application traffic, provisioning an AWS Elastic Load Balancer (ELB).
 
 ---
 
@@ -420,7 +420,7 @@ EBS CSI Driver
 - Integrated Amazon ECR.
 - Configured AWS EBS gp3 persistent storage.
 - Integrated the AWS EBS CSI Driver.
-- Configured Application Load Balancer.
+- Configured Elastic Load Balancer (ELB).
 
 ### Kubernetes
 - Created Kubernetes deployments and services.
