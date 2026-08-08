@@ -52,7 +52,7 @@ jobs:
           SHA=${{ github.event.workflow_run.head_sha }}
 
           SERVICES=(
-            api-gateway
+            api-gatway
             auth-service
             cart-service
             config-server
