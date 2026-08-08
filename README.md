@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Microservices — AWS DevOps
+# 🛒 E-Commerce Microservices — AWS DevOps Deployment
 
 <p align="center">
   <b>Cloud-Native • Kubernetes • AWS • CI/CD • Monitoring • DevOps</b>
