@@ -1,6 +1,6 @@
 dependencies:
-- name: api-gateway
-  repository: file://charts/api-gateway
+- name: api-gatway
+  repository: file://charts/api-gatway
   version: 0.1.0
 - name: auth-service
   repository: file://charts/auth-service
@@ -47,5 +47,5 @@ dependencies:
 - name: mariadb
   repository: file://charts/mariadb
   version: 0.1.0
-digest: sha256:7ed2a7f6512c0a404609e61483d1384263d07899d2318fa9e2846d63b421ae9f
-generated: "2026-07-29T23:54:48.3197425+05:30"
+digest: sha256:bde01883b99af54b1a69219b87985717031519f242a9d913ac325d3433fad456
+generated: "2026-08-08T11:44:27.225438267Z"
