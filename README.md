@@ -68,7 +68,8 @@ The DevOps implementation includes:
 ## 🏗️ DevOps Architecture
 
 
-<img width="1774" height="887" alt="ChatGPT Image Aug 8, 2026, 08_58_39 PM" src="https://github.com/user-attachments/assets/5801b16f-f0c9-40b4-9d58-308577c904f8" />
+<img width="1774" height="887" alt="ChatGPT Image Aug 8, 2026, 09_08_16 PM" src="https://github.com/user-attachments/assets/2f276189-784f-4a09-9d4c-a5eb094672cb" />
+
 
 
 ---
