@@ -96,7 +96,7 @@ jobs:
             product-service
             profile-service
             search-service
-            api-gateway
+            api-gatway
           )
 
           for SERVICE in "${SERVICES[@]}"
